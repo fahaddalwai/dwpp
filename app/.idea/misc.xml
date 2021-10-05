@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/drawable/fire_1.xml" value="0.2703125" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/drawable/home_1.xml" value="0.2703125" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/drawable/maskgrou.xml" value="0.2703125" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/drawable/profile_round.xml" value="0.4" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/drawable/trending.xml" value="0.2703125" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/activity_authentication.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/cats_load_state_footer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/fragment_discover.xml" value="0.1" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/fragment_login.xml" value="0.24547101449275363" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/fragment_profile.xml" value="0.23822463768115942" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/fragment_recommendations.xml" value="0.24547101449275363" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/fragment_signup.xml" value="0.264" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/fragment_welcome.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/image_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/layout/navigation_header.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/menu/navigation_drawer_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dalwa/AndroidStudioProjects/gdscdwp/app/src/main/res/menu/profile_navigation_menu.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

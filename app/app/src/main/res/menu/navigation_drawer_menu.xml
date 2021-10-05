@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/home_main"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/discoverFragment"
+        android:icon="@drawable/fire_1"
+        android:title="Trending" />
+    <item
+        android:id="@+id/recommendationsFragment"
+        android:icon="@drawable/activity_1"
+        android:title="Activity" />
+
+
+</menu>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">gdscdwp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="retry">retry</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="pets">Pets</string>
+    <string name="weekly">Weekly</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign up</string>
+    <string name="username">Username</string>
+
+    <string name="your_pass">Your pass</string>
+    <string name="full_name">Full Name</string>
+    <string name="password">Password</string>
+    <string name="sign_up_to_pets">Sign up to Pets</string>
+    <string name="name">Name</string>
+    <string name="log_in_with">Log in with</string>
+
+
+    <string name="email">Email</string>
+
+    <string name="confirm_password">Confirm Password</string>
+    <string name="and_again">And again!</string>
+</resources>
