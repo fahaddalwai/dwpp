@@ -91,15 +91,15 @@ class DiscoverFragment : Fragment() {
         val manager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
 
 
-        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        layoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
+        //val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        //layoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS
 
 
         // Set the viewmodel for databinding - this allows the bound layout access
         // to all the data in the ViewModel
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-        binding.list.layoutManager=layoutManager
+        binding.list.layoutManager=manager
 
 
         // bind the state

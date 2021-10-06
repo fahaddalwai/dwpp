@@ -19,7 +19,6 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .dontAnimate()
             .centerCrop()
-            .override(SIZE_ORIGINAL, SIZE_ORIGINAL)
             .dontTransform()
             .priority(Priority.IMMEDIATE)
             .format(DecodeFormat.DEFAULT)

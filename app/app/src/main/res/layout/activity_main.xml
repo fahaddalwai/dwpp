@@ -18,10 +18,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawerLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
 
 
@@ -29,11 +25,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
+                <androidx.drawerlayout.widget.DrawerLayout
+                    android:id="@+id/drawerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
                 <fragment
                     android:id="@+id/myNavHostFragment"
                     android:name="androidx.navigation.fragment.NavHostFragment"
@@ -46,36 +56,22 @@
                     app:layout_constraintTop_toBottomOf="@+id/toolbar"
                     app:navGraph="@navigation/navigation_main" />
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="60sp"
-                    android:background="?attr/colorPrimary"
-                    android:fadingEdge="horizontal"
-                    android:minHeight="?attr/actionBarSize"
-                    android:theme="?attr/actionBarTheme"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <com.google.android.material.navigation.NavigationView
+                        android:id="@+id/navView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        app:headerLayout="@layout/navigation_header"
+                        app:menu="@menu/navigation_drawer_menu"
+                        app:itemIconTint="@color/navigationdrawercolor"
+                        app:itemTextColor="@color/navigationdrawercolor"/>
 
 
+                </androidx.drawerlayout.widget.DrawerLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
 
 
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navView"
-            android:layout_width="150sp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            app:itemIconTint="@color/navigationdrawercolor"
-            app:itemTextColor="@color/navigationdrawercolor"
-            app:menu="@menu/navigation_drawer_menu"
-            app:headerLayout="@layout/navigation_header"/>
-
-    </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

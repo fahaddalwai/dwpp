@@ -13,7 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="6sp"
-        android:padding="5sp"
         app:cardCornerRadius="28dp"
         app:cardElevation="14sp"
         >
@@ -26,27 +25,21 @@
             <ImageView
                 android:id="@+id/item_image"
                 imageUrl="@{catImage.url}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
                 android:importantForAccessibility="no"
+
                 android:scaleType="centerCrop"
-                app:layout_constrainedHeight="true"
-                app:layout_constrainedWidth="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
                 tools:src="@drawable/ic_launcher_background" />
 
             <ImageView
                 android:id="@+id/upvote_button"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-
-                android:alpha="0.8"
                 android:elevation="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
