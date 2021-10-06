@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.target.Target.SIZE_ORIGINAL
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
@@ -18,10 +19,10 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .dontAnimate()
             .centerCrop()
+            .override(SIZE_ORIGINAL, SIZE_ORIGINAL)
             .dontTransform()
             .priority(Priority.IMMEDIATE)
             .format(DecodeFormat.DEFAULT)
-
             .into(imgView)
 
 

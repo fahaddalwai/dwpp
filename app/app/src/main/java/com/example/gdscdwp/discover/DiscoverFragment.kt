@@ -49,6 +49,10 @@ import androidx.core.content.ContentProviderCompat.requireContext
 import java.util.*
 import com.bumptech.glide.util.ViewPreloadSizeProvider
 import java.security.AccessController.getContext
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+
+
+
 
 
 class DiscoverFragment : Fragment() {
@@ -86,12 +90,16 @@ class DiscoverFragment : Fragment() {
 
         val manager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
 
+
+        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        layoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
+
+
         // Set the viewmodel for databinding - this allows the bound layout access
         // to all the data in the ViewModel
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-        binding.list.layoutManager=manager
-
+        binding.list.layoutManager=layoutManager
 
 
         // bind the state
