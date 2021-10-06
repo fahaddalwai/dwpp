@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="planets_array">
+        <item>boxes</item>
+        <item>clothes</item>
+        <item>hats</item>
+        <item>sinks</item>
+        <item>space</item>
+        <item>sunglasses</item>
+        <item>ties</item>
+    </string-array>
+</resources>

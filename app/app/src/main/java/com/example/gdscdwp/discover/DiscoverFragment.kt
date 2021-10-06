@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
@@ -38,12 +39,11 @@ class DiscoverFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_discover, container, false)
 
 
-
-
-        val viewModelFactory = DiscoverViewModelFactory(this, Repository(
-            ResponseApi.retrofitService,
-            getInstance(requireContext())
-        )
+        val viewModelFactory = DiscoverViewModelFactory(
+            this, Repository(
+                ResponseApi.retrofitService,
+                getInstance(requireContext())
+            )
         )
 
         viewModel =
@@ -53,9 +53,16 @@ class DiscoverFragment : Fragment() {
             ).get(DiscoverViewModel::class.java)      //define instance of viewmodel using provider
 
 
-
-
-
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.planets_array,
+            R.layout.spinner
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            binding.spinner.adapter = adapter
+        }
 
 
         val manager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
@@ -69,7 +76,7 @@ class DiscoverFragment : Fragment() {
         // to all the data in the ViewModel
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-        binding.list.layoutManager=manager
+        binding.list.layoutManager = manager
 
 
         // bind the state
@@ -106,40 +113,24 @@ class DiscoverFragment : Fragment() {
         uiState: StateFlow<UiState>,
         onQueryChanged: (UiAction.Search) -> Unit
     ) {
-        searchCat.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_GO) {
-                updateRepoListFromInput(onQueryChanged)
-                true
-            } else {
-                false
-            }
-        }
-        searchCat.setOnKeyListener { _, keyCode, event ->
-            if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-                updateRepoListFromInput(onQueryChanged)
-                true
-            } else {
-                false
-            }
+
+
+        button.setOnClickListener {
+            updateRepoListFromInput(onQueryChanged)
         }
 
-        lifecycleScope.launch {
-            uiState
-                .map { it.query }
-                .distinctUntilChanged()
-                .collect(searchCat::setText)
-        }
+//        lifecycleScope.launch {
+//            uiState
+//                .map { it.query }
+//                .distinctUntilChanged()
+//                .collect(searchCat::setText)
+//        }
     }
 
     private fun FragmentDiscoverBinding.updateRepoListFromInput(onQueryChanged: (UiAction.Search) -> Unit) {
-        searchCat.text?.trim().let {
-            if (it != null) {
-                if (it.isNotEmpty()) {
-                    list.scrollToPosition(0)
-                    onQueryChanged(UiAction.Search(query = it.toString()))
-                }
-            }
-        }
+        list.scrollToPosition(0)
+        onQueryChanged(UiAction.Search(query = binding.spinner.selectedItem.toString()))
+
     }
 
     private fun FragmentDiscoverBinding.bindList(
@@ -189,7 +180,8 @@ class DiscoverFragment : Fragment() {
 
         lifecycleScope.launch {
             imagesAdapter.loadStateFlow.collect { loadState ->
-                val isListEmpty = loadState.refresh is LoadState.NotLoading && imagesAdapter.itemCount == 0
+                val isListEmpty =
+                    loadState.refresh is LoadState.NotLoading && imagesAdapter.itemCount == 0
                 // show empty list
                 emptyList.isVisible = isListEmpty
                 // Only show the list if refresh succeeds.
@@ -214,8 +206,6 @@ class DiscoverFragment : Fragment() {
             }
         }
     }
-
-
 
 
 }
