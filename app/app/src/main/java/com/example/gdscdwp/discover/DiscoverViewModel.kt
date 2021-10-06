@@ -1,14 +1,11 @@
 package com.example.gdscdwp.discover
 
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.example.gdscdwp.api.ResponseApi
 import com.example.gdscdwp.data.Repository
-import com.example.gdscdwp.database.CatDatabase
 import com.example.gdscdwp.model.CatImage
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -20,12 +17,10 @@ class DiscoverViewModel(
 ) : ViewModel() {
 
 
-
-
-            /**
-             * Stream of immutable states representative of the UI.
-             */
-            val state: StateFlow<UiState>
+    /**
+     * Stream of immutable states representative of the UI.
+     */
+    val state: StateFlow<UiState>
 
     /**
      * Processor of side effects from the UI which in turn feedback into [state]
@@ -111,4 +106,4 @@ data class UiState(
 
 private const val LAST_QUERY_SCROLLED: String = "last_query_scrolled"
 private const val LAST_SEARCH_QUERY: String = "last_search_query"
-private const val DEFAULT_QUERY = ""
+private const val DEFAULT_QUERY = "space"

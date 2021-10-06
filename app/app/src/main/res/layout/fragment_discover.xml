@@ -26,33 +26,32 @@
         android:layout_marginRight="0dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/search_cat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="type in anything!"
             android:imeOptions="actionSearch"
             android:inputType="textNoSuggestions"
-            android:visibility="invisible"
+
             android:selectAllOnFocus="true"
             tools:text="towel"/>
     </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"
-            android:layout_width="0dp"
-            android:background="@color/pink"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@color/pink"
             android:paddingVertical="0dp"
             android:scrollbars="vertical"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/input_layout"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout"
             tools:ignore="UnusedAttribute" />
 
     <ProgressBar

@@ -1,8 +1,8 @@
 package com.example.gdscdwp.discover
 
+
 import android.os.Bundle
 import android.view.KeyEvent
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,49 +10,19 @@ import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gdscdwp.R
-
-
 import com.example.gdscdwp.api.ResponseApi
 import com.example.gdscdwp.data.Repository
 import com.example.gdscdwp.database.CatDatabase.Companion.getInstance
 import com.example.gdscdwp.databinding.FragmentDiscoverBinding
-
-
-import kotlinx.android.synthetic.main.fragment_discover.*
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import com.bumptech.glide.Glide
-
-import com.bumptech.glide.integration.recyclerview.RecyclerViewPreloader
-
-import com.bumptech.glide.ListPreloader.PreloadModelProvider
-
-import com.bumptech.glide.util.FixedPreloadSizeProvider
-
-import com.bumptech.glide.ListPreloader.PreloadSizeProvider
-import com.example.gdscdwp.model.CatImage
-import com.bumptech.glide.RequestBuilder
-
-import android.text.TextUtils
-
-
-
-import androidx.annotation.NonNull
-import androidx.annotation.Nullable
-import androidx.core.content.ContentProviderCompat.requireContext
-import java.util.*
-import com.bumptech.glide.util.ViewPreloadSizeProvider
-import java.security.AccessController.getContext
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-
-
-
 
 
 class DiscoverFragment : Fragment() {
@@ -162,10 +132,12 @@ class DiscoverFragment : Fragment() {
     }
 
     private fun FragmentDiscoverBinding.updateRepoListFromInput(onQueryChanged: (UiAction.Search) -> Unit) {
-        searchCat.text.trim().let {
-            if (it.isNotEmpty()) {
-                list.scrollToPosition(0)
-                onQueryChanged(UiAction.Search(query = it.toString()))
+        searchCat.text?.trim().let {
+            if (it != null) {
+                if (it.isNotEmpty()) {
+                    list.scrollToPosition(0)
+                    onQueryChanged(UiAction.Search(query = it.toString()))
+                }
             }
         }
     }

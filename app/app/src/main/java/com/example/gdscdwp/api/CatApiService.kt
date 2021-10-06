@@ -24,12 +24,12 @@ private val retrofit = Retrofit.Builder()
 
 
 interface CatApiService {
-    @GET("v1/images/search")        //which is https://api.openweathermap.org/data/2.5/find?
+    @GET("v1/images/search")
     suspend fun getAll(
         @Query("limit") limit: Int,
         @Query("page") page: Int,
         @Query("order") order: String,
-        @Query("categories") categories: String,
+        @Query("category_ids") category_id: Int,
     ): List<CatImage>
 }
 

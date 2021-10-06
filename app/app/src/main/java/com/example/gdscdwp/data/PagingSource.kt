@@ -16,7 +16,18 @@ class PagingSource(
 ) : PagingSource<Int, CatImage>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, CatImage> {
         val position = params.key ?: API_STARTING_PAGE_INDEX
-        val apiQuery = query
+        var apiQuery=1
+
+        when(query){
+            "boxes"->apiQuery=5
+            "clothes"->apiQuery=15
+            "hats"->apiQuery=1
+            "sinks"->apiQuery=14
+            "space"->apiQuery=2
+            "sunglasses"->apiQuery=4
+            "ties"->apiQuery=7
+        }
+
         return try {
 
             val response = service.getAll(NETWORK_PAGE_SIZE,position,"DESC",apiQuery)
