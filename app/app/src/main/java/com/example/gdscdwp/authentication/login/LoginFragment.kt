@@ -16,22 +16,24 @@ import com.example.gdscdwp.discover.DiscoverViewModel
 
 
 class LoginFragment : Fragment() {
-    private lateinit var binding:FragmentLoginBinding
+
+    private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding= DataBindingUtil.inflate(inflater, R.layout.fragment_login, container,false)
-        viewModel = ViewModelProvider(this,).get(LoginViewModel::class.java)      //define instance of viewmodel using provider
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         binding.viewModel = viewModel
+
         binding.lifecycleOwner = this
 
-
-        viewModel.goBack.observe(viewLifecycleOwner,{
-            if(it){
+        viewModel.goBack.observe(viewLifecycleOwner, {
+            if (it) {
                 goBack()
                 viewModel.setEventGoBackToFalse()
             }
@@ -41,7 +43,9 @@ class LoginFragment : Fragment() {
     }
 
     private fun goBack() {
+
         findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
+
     }
 
 

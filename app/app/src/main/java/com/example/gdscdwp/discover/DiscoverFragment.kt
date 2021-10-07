@@ -2,11 +2,11 @@ package com.example.gdscdwp.discover
 
 
 import android.os.Bundle
-import android.view.KeyEvent
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
+
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.view.isVisible
@@ -24,6 +24,10 @@ import com.example.gdscdwp.database.CatDatabase.Companion.getInstance
 import com.example.gdscdwp.databinding.FragmentDiscoverBinding
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import android.widget.AdapterView
+
+
+
 
 
 class DiscoverFragment : Fragment() {
@@ -55,7 +59,7 @@ class DiscoverFragment : Fragment() {
 
         ArrayAdapter.createFromResource(
             requireContext(),
-            R.array.planets_array,
+            R.array.cat_search_array,
             R.layout.spinner
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
@@ -115,16 +119,23 @@ class DiscoverFragment : Fragment() {
     ) {
 
 
-        button.setOnClickListener {
-            updateRepoListFromInput(onQueryChanged)
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long
+            ) {
+               updateRepoListFromInput(onQueryChanged)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // another interface callback
+            }
         }
 
-//        lifecycleScope.launch {
-//            uiState
-//                .map { it.query }
-//                .distinctUntilChanged()
-//                .collect(searchCat::setText)
-//        }
+
     }
 
     private fun FragmentDiscoverBinding.updateRepoListFromInput(onQueryChanged: (UiAction.Search) -> Unit) {
@@ -209,5 +220,7 @@ class DiscoverFragment : Fragment() {
 
 
 }
+
+
 
 

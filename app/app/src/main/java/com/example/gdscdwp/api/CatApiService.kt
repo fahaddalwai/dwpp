@@ -8,8 +8,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-private const val BASE_URL="https://api.thecatapi.com/"
-
+private const val BASE_URL = "https://api.thecatapi.com/"
 
 
 private val moshi = Moshi.Builder()
@@ -34,6 +33,7 @@ interface CatApiService {
 }
 
 object ResponseApi {
-    val retrofitService : CatApiService by lazy {
-        retrofit.create(CatApiService::class.java) }
+    val retrofitService: CatApiService by lazy {
+        retrofit.create(CatApiService::class.java)
+    }
 }
