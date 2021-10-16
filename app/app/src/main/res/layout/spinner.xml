@@ -4,4 +4,5 @@
     android:layout_height="wrap_content"
     android:fontFamily="@font/plusjakarta"
     android:gravity="center_horizontal"
-    android:textSize="34sp" />
+    android:textColor="@color/dark_pink"
+    android:textSize="24sp" />
