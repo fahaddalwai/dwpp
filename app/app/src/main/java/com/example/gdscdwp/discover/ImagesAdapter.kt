@@ -15,6 +15,15 @@ import com.example.gdscdwp.model.CatImage
 import java.util.*
 
 
+import androidx.annotation.NonNull
+import androidx.annotation.Nullable
+
+import com.bumptech.glide.ListPreloader.PreloadModelProvider
+
+
+
+
+
 class ImagesAdapter() : PagingDataAdapter<CatImage, ImagesAdapter.ViewHolder>(SleepNightDiffCallback()) {
 
     class ViewHolder private constructor(val binding: ImageItemBinding) : RecyclerView.ViewHolder(binding.root){
@@ -39,12 +48,14 @@ class ImagesAdapter() : PagingDataAdapter<CatImage, ImagesAdapter.ViewHolder>(Sl
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val food=getItem(position)!!
+        val pet=getItem(position)!!
 
 
 
-        holder.bind(food)
+        holder.bind(pet)
     }
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)

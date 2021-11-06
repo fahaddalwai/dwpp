@@ -25,9 +25,17 @@ import com.example.gdscdwp.databinding.FragmentDiscoverBinding
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import android.widget.AdapterView
+import com.bumptech.glide.util.FixedPreloadSizeProvider
+import com.bumptech.glide.ListPreloader.PreloadSizeProvider
+import com.bumptech.glide.RequestBuilder
 
+import android.text.TextUtils
 
+import androidx.annotation.NonNull
+import androidx.annotation.Nullable
 
+import com.bumptech.glide.ListPreloader.PreloadModelProvider
+import java.util.*
 
 
 class DiscoverFragment : Fragment() {
@@ -69,7 +77,34 @@ class DiscoverFragment : Fragment() {
         }
 
 
+//        val sizeProvider: PreloadSizeProvider<*> =
+//            FixedPreloadSizeProvider<Any?>(1024, 1024)
+//
+//        class MyPreloadModelProvider : PreloadModelProvider<Any?> {
+//            override fun getPreloadItems(position: Int): List<> {
+//                val url: String = myUrls.get(position)
+//                return if (TextUtils.isEmpty(url)) {
+//                    Collections.emptyList()
+//                } else Collections.singletonList(url)
+//            }
+//
+//
+//            override fun getPreloadRequestBuilder(item: Any): RequestBuilder<*>? {
+//                return GlideApp.with(fragment)
+//                    .load(url)
+//                    .override(imageWidthPixels, imageHeightPixels)
+//            }
+//
+//
+//        }
+//
+
+
+
         val manager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
+
+
+
 
 
         //val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
