@@ -7,6 +7,10 @@
         <variable
             name="catImage"
             type="com.example.gdscdwp.model.CatImage"/>
+        <variable
+            name="clickListener"
+            type="com.example.gdscdwp.discover.CatClickedListener" />
+
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -28,7 +32,7 @@
                 android:layout_width="220dp"
                 android:layout_height="220dp"
                 android:importantForAccessibility="no"
-
+                android:onClick="@{() -> clickListener.onClick(catImage)}"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -33,9 +33,14 @@ import android.text.TextUtils
 
 import androidx.annotation.NonNull
 import androidx.annotation.Nullable
+import androidx.navigation.fragment.findNavController
 
 import com.bumptech.glide.ListPreloader.PreloadModelProvider
 import java.util.*
+import android.os.Parcelable
+
+
+
 
 
 class DiscoverFragment : Fragment() {
@@ -118,6 +123,8 @@ class DiscoverFragment : Fragment() {
         binding.list.layoutManager = manager
 
 
+
+
         // bind the state
         binding.bindState(
             uiState = viewModel.state,
@@ -131,7 +138,19 @@ class DiscoverFragment : Fragment() {
         uiState: StateFlow<UiState>,
         uiActions: (UiAction) -> Unit
     ) {
-        val imagesAdapter = ImagesAdapter()
+
+
+
+        val imagesAdapter = ImagesAdapter(CatClickedListener {
+            Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+            findNavController().navigate(DiscoverFragmentDirections.actionDiscoverFragmentToEnlargedImageFragment(it)
+            )
+        })
+
+
+
+
+        //imagesAdapter.stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
 
         list.adapter = imagesAdapter.withLoadStateHeaderAndFooter(
             header = CatLoadStateAdapter { imagesAdapter.retry() },
@@ -157,8 +176,8 @@ class DiscoverFragment : Fragment() {
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View,
+                parent: AdapterView<*>?,
+                view: View?,
                 position: Int,
                 id: Long
             ) {
@@ -174,7 +193,7 @@ class DiscoverFragment : Fragment() {
     }
 
     private fun FragmentDiscoverBinding.updateRepoListFromInput(onQueryChanged: (UiAction.Search) -> Unit) {
-        list.scrollToPosition(0)
+        //list.scrollToPosition(0)
         onQueryChanged(UiAction.Search(query = binding.spinner.selectedItem.toString()))
 
     }

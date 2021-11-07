@@ -15,10 +15,23 @@
         android:id="@+id/discoverFragment"
         android:name="com.example.gdscdwp.discover.DiscoverFragment"
         android:label="Trending"
-        tools:layout="@layout/fragment_discover" />
+        tools:layout="@layout/fragment_discover" >
+        <action
+            android:id="@+id/action_discoverFragment_to_enlargedImageFragment"
+            app:destination="@id/enlargedImageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.gdscdwp.profile.ProfileFragment"
         android:label="Home"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/enlargedImageFragment"
+        android:name="com.example.gdscdwp.discover.EnlargedImageFragment"
+        android:label="fragment_enlarged_image"
+        tools:layout="@layout/fragment_enlarged_image" >
+        <argument
+            android:name="catUrl"
+            app:argType="string" />
+    </fragment>
 </navigation>

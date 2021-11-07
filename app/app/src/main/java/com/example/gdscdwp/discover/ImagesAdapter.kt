@@ -1,35 +1,22 @@
 package com.example.gdscdwp.discover
 
 
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.ListPreloader
-import com.bumptech.glide.RequestBuilder
 import com.example.gdscdwp.databinding.ImageItemBinding
 import com.example.gdscdwp.model.CatImage
-import java.util.*
 
 
-import androidx.annotation.NonNull
-import androidx.annotation.Nullable
-
-import com.bumptech.glide.ListPreloader.PreloadModelProvider
-
-
-
-
-
-class ImagesAdapter() : PagingDataAdapter<CatImage, ImagesAdapter.ViewHolder>(SleepNightDiffCallback()) {
+class ImagesAdapter(val clickListener: CatClickedListener) : PagingDataAdapter<CatImage, ImagesAdapter.ViewHolder>(CatDiffCallback()) {
 
     class ViewHolder private constructor(val binding: ImageItemBinding) : RecyclerView.ViewHolder(binding.root){
 
-        fun bind(item: CatImage) {
+        fun bind(item: CatImage, clickListener: CatClickedListener) {
             binding.catImage= item
+            binding.clickListener = clickListener
             binding.executePendingBindings()
 
 
@@ -52,7 +39,7 @@ class ImagesAdapter() : PagingDataAdapter<CatImage, ImagesAdapter.ViewHolder>(Sl
 
 
 
-        holder.bind(pet)
+        holder.bind(pet, clickListener)
     }
 
 
@@ -67,10 +54,7 @@ class ImagesAdapter() : PagingDataAdapter<CatImage, ImagesAdapter.ViewHolder>(Sl
 
 }
 
-
-
-
-class SleepNightDiffCallback : DiffUtil.ItemCallback<CatImage>() {
+class CatDiffCallback : DiffUtil.ItemCallback<CatImage>() {
 
     override fun areItemsTheSame(oldItem: CatImage, newItem: CatImage): Boolean {
         return oldItem.url == newItem.url
@@ -83,4 +67,8 @@ class SleepNightDiffCallback : DiffUtil.ItemCallback<CatImage>() {
 
 
 
+
+}
+class CatClickedListener(val clickListener: (catUrl: String)-> Unit) {
+    fun onClick(catImage: CatImage) = clickListener(catImage.url)
 }
