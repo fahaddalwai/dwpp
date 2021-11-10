@@ -18,29 +18,15 @@ import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gdscdwp.R
-import com.example.gdscdwp.api.ResponseApi
+import com.example.gdscdwp.network.ResponseApi
 import com.example.gdscdwp.data.Repository
 import com.example.gdscdwp.database.CatDatabase.Companion.getInstance
 import com.example.gdscdwp.databinding.FragmentDiscoverBinding
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import android.widget.AdapterView
-import com.bumptech.glide.util.FixedPreloadSizeProvider
-import com.bumptech.glide.ListPreloader.PreloadSizeProvider
-import com.bumptech.glide.RequestBuilder
 
-import android.text.TextUtils
-
-import androidx.annotation.NonNull
-import androidx.annotation.Nullable
 import androidx.navigation.fragment.findNavController
-
-import com.bumptech.glide.ListPreloader.PreloadModelProvider
-import java.util.*
-import android.os.Parcelable
-
-
-
 
 
 class DiscoverFragment : Fragment() {

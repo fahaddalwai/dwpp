@@ -6,7 +6,7 @@
     <data>
         <variable
             name="catImage"
-            type="com.example.gdscdwp.model.CatImage"/>
+            type="com.example.gdscdwp.domain.CatImage"/>
         <variable
             name="clickListener"
             type="com.example.gdscdwp.discover.CatClickedListener" />

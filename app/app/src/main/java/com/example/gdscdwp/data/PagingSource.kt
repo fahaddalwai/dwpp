@@ -3,8 +3,10 @@ package com.example.gdscdwp.data
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 
-import com.example.gdscdwp.api.CatApiService
-import com.example.gdscdwp.model.CatImage
+import com.example.gdscdwp.network.CatApiService
+import com.example.gdscdwp.domain.CatImage
+import com.example.gdscdwp.network.asDatabaseModel
+import com.example.gdscdwp.network.asDomainModel
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -30,7 +32,7 @@ class PagingSource(
 
         return try {
 
-            val response = service.getAll(NETWORK_PAGE_SIZE,position,"DESC",apiQuery)
+            val response = service.getAll(NETWORK_PAGE_SIZE,position,"DESC",apiQuery).asDomainModel()
             val nextKey = if (response.isEmpty()) {
                 null
             } else {

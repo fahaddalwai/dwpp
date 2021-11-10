@@ -7,7 +7,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gdscdwp.databinding.ImageItemBinding
-import com.example.gdscdwp.model.CatImage
+import com.example.gdscdwp.domain.CatImage
 
 
 class ImagesAdapter(val clickListener: CatClickedListener) : PagingDataAdapter<CatImage, ImagesAdapter.ViewHolder>(CatDiffCallback()) {

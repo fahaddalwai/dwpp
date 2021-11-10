@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.example.gdscdwp.data.Repository
-import com.example.gdscdwp.model.CatImage
+import com.example.gdscdwp.domain.CatImage
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
