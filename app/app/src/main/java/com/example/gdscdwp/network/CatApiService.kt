@@ -1,6 +1,6 @@
-package com.example.gdscdwp.api
+package com.example.gdscdwp.network
 
-import com.example.gdscdwp.model.CatImage
+import com.example.gdscdwp.domain.CatImage
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -29,7 +29,7 @@ interface CatApiService {
         @Query("page") page: Int,
         @Query("order") order: String,
         @Query("category_ids") category_id: Int,
-    ): List<CatImage>
+    ): List<NetworkResponse>
 }
 
 object ResponseApi {

@@ -1,22 +1,21 @@
 package com.example.gdscdwp.database
 
-import androidx.lifecycle.LiveData
 import androidx.paging.PagingSource
 import androidx.room.*
-import com.example.gdscdwp.model.CatImage
+import com.example.gdscdwp.domain.CatImage
 
 @Dao
 interface CatDatabaseDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(catImages: List<CatImage>)
+    suspend fun insertAll(catImages: List<DatabaseCatImage>)
 
     @Query(
-        "SELECT * FROM catImages"
+        "SELECT * FROM DatabaseCatImage"
     )
-    fun catsAllRandom(): PagingSource<Int, CatImage>
+    fun catsAllRandom(): PagingSource<Int, DatabaseCatImage>
 
-    @Query("DELETE FROM catImages")
+    @Query("DELETE FROM DatabaseCatImage")
     suspend fun clearRepos()
 
 

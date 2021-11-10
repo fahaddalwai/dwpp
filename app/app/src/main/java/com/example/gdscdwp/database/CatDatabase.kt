@@ -4,10 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.gdscdwp.database.CatDatabaseDao
-import com.example.gdscdwp.model.CatImage
+import com.example.gdscdwp.domain.CatImage
 
-@Database(entities = [CatImage::class], version = 2, exportSchema = false)
+@Database(entities = [DatabaseCatImage::class], version = 3, exportSchema = false)
 abstract class CatDatabase : RoomDatabase() {
 
     abstract val catDatabaseDao: CatDatabaseDao
