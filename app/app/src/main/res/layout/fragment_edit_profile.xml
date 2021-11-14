@@ -3,8 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.gdscdwp.editprofile.EditProfileViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +16,7 @@
         android:background="@color/pink"
         tools:context=".editprofile.EditProfileFragment">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/profile_image"
             android:layout_width="96dp"
             android:layout_height="96dp"
@@ -90,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/update"
+            android:onClick="@{() -> viewModel.setShowDialogUpdateToTrue()}"
             app:layout_constraintEnd_toEndOf="@+id/PhonenumberEditText"
             app:layout_constraintStart_toStartOf="@+id/PhonenumberEditText"
             app:layout_constraintTop_toBottomOf="@+id/PhonenumberEditText" />
@@ -101,7 +105,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/delete_account"
+            android:textColor="@color/dark_pink"
             android:textSize="16sp"
+            android:onClick="@{() -> viewModel.setShowDialogDeleteToTrue()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

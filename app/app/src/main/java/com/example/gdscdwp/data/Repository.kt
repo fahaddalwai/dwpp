@@ -12,8 +12,6 @@ class Repository(private val service: CatApiService,
                  private val database: CatDatabase
 ) {
 
-
-
     fun getSearchResultStream(query: String): Flow<PagingData<CatImage>> {
         return Pager(
             config = PagingConfig(

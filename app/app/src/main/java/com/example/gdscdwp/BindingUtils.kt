@@ -28,4 +28,9 @@ fun bindImage(imgView: ImageView?, imgUrl: String?) {
         }
 
     }
+
+
+
+
+
 }
