@@ -27,11 +27,15 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/enlargedImageFragment"
-        android:name="com.example.gdscdwp.discover.EnlargedImageFragment"
+        android:name="com.example.gdscdwp.discover.enlargedImage.EnlargedImageFragment"
         android:label="fragment_enlarged_image"
         tools:layout="@layout/fragment_enlarged_image" >
         <argument
             android:name="catUrl"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.gdscdwp.editprofile.EditProfileFragment"
+        android:label="EditProfileFragment" />
 </navigation>

@@ -18,7 +18,14 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import com.bumptech.glide.Glide
-
+import android.graphics.drawable.Drawable
+import android.view.View
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.internal.ContextUtils.getActivity
+import de.hdodenhof.circleimageview.CircleImageView
+import android.view.ViewGroup
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,9 +50,10 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(binding.navView, navController)
 
 
+        val drawable = ContextCompat.getDrawable(applicationContext, R.drawable.fire_icon)
+        binding.toolbar.overflowIcon = drawable
 
 
-        //binding.toolbar.overflowIcon = ContextCompat.getDrawable(this, R.drawable.cutecat)
 
     }
 
@@ -63,18 +71,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle item selection
-        return when (item.itemId) {
-            R.id.editprofile-> {
-                Toast.makeText(this,"you pressed me",Toast.LENGTH_SHORT).show()
-                true
-            }
-            R.id.logout -> {
-                Toast.makeText(this,"you pressed me",Toast.LENGTH_SHORT).show()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
+        return NavigationUI.
+        onNavDestinationSelected(item,this.findNavController(R.id.myNavHostFragment))
+                || super.onOptionsItemSelected(item)
     }
 
 
