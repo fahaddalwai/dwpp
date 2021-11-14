@@ -1,4 +1,4 @@
-package com.example.gdscdwp.discover
+package com.example.gdscdwp.discover.enlargedImage
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

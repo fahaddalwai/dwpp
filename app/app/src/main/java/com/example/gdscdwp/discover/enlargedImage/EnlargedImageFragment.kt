@@ -1,7 +1,6 @@
-package com.example.gdscdwp.discover
+package com.example.gdscdwp.discover.enlargedImage
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
