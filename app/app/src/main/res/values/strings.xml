@@ -18,8 +18,13 @@
     <string name="log_in_with">Log in with</string>
 
 
-    <string name="email">Email</string>
-
     <string name="confirm_password">Confirm Password</string>
     <string name="and_again">And again!</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="first_name">First Name</string>
+    <string name="update">Update</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="im_looking_for_cats_in">Im looking for cats in</string>
 </resources>
