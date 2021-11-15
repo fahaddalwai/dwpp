@@ -18,7 +18,10 @@
         tools:layout="@layout/fragment_discover" >
         <action
             android:id="@+id/action_discoverFragment_to_enlargedImageFragment"
-            app:destination="@id/enlargedImageFragment" />
+            app:destination="@id/enlargedImageFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/discoverFragment" /> />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
