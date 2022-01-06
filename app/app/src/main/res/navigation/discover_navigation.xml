@@ -2,21 +2,20 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/discover_navigation"
-    app:startDestination="@id/discoverFragment2">
+    app:startDestination="@id/discoverFragment">
 
     <fragment
-        android:id="@+id/discoverFragment2"
+        android:id="@+id/discoverFragment"
         android:name="com.example.gdscdwp.discover.DiscoverFragment"
         android:label="DiscoverFragment" >
         <action
-            android:id="@+id/action_discoverFragment2_to_enlargedImageFragment2"
-            app:destination="@id/enlargedImageFragment2"
+            android:id="@+id/action_discoverFragment_to_enlargedImageFragment"
+            app:destination="@id/enlargedImageFragment"
             app:enterAnim="@android:anim/slide_in_left"
-            app:popExitAnim="@android:anim/slide_out_right"
-            app:popUpTo="@id/discoverFragment2"/>
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
-        android:id="@+id/enlargedImageFragment2"
+        android:id="@+id/enlargedImageFragment"
         android:name="com.example.gdscdwp.discover.enlargedImage.EnlargedImageFragment"
         android:label="EnlargedImageFragment" >
         <argument

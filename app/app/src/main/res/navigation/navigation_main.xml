@@ -3,42 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main"
-    app:startDestination="@id/recommendationsFragment">
-
-    <fragment
-        android:id="@+id/recommendationsFragment"
-
-        android:name="com.example.gdscdwp.recommendations.RecommendationsFragment"
-        android:label="Your Feed"
-        tools:layout="@layout/fragment_recommendations" />
-    <fragment
-        android:id="@+id/discoverFragment"
-        android:name="com.example.gdscdwp.discover.DiscoverFragment"
-        android:label="Trending"
-        tools:layout="@layout/fragment_discover" >
-        <action
-            android:id="@+id/action_discoverFragment_to_enlargedImageFragment"
-            app:destination="@id/enlargedImageFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:popExitAnim="@android:anim/slide_out_right"
-            app:popUpTo="@id/discoverFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.gdscdwp.profile.ProfileFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/enlargedImageFragment"
-        android:name="com.example.gdscdwp.discover.enlargedImage.EnlargedImageFragment"
-        android:label="fragment_enlarged_image"
-        tools:layout="@layout/fragment_enlarged_image" >
-        <argument
-            android:name="catUrl"
-            app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/editProfileFragment"
-        android:name="com.example.gdscdwp.editprofile.EditProfileFragment"
-        android:label="EditProfileFragment" />
+    app:startDestination="@id/profile_navigation">
+    <include app:graph="@navigation/discover_navigation" />
+    <include app:graph="@navigation/profile_navigation" />
+    <include app:graph="@navigation/recommendation_navigation" />
 </navigation>
