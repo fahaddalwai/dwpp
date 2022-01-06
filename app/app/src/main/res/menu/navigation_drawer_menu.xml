@@ -3,16 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/profileFragment"
+        android:id="@+id/recommendation_navigation"
         android:icon="@drawable/home_main"
         android:title="Home" />
 
     <item
-        android:id="@+id/discoverFragment"
+        android:id="@+id/discover_navigation"
         android:icon="@drawable/fire_icon"
         android:title="Trending" />
     <item
-        android:id="@+id/recommendationsFragment"
+        android:id="@+id/profile_navigation"
         android:icon="@drawable/activity_1"
         android:title="Activity" />
 

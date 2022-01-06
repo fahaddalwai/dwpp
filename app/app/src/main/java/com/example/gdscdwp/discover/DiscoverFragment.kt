@@ -129,7 +129,7 @@ class DiscoverFragment : Fragment() {
 
         val imagesAdapter = ImagesAdapter(CatClickedListener {
             Toast.makeText(context, it, Toast.LENGTH_LONG).show()
-            findNavController().navigate(DiscoverFragmentDirections.actionDiscoverFragmentToEnlargedImageFragment(it)
+            findNavController().navigate(DiscoverFragmentDirections.actionDiscoverFragment2ToEnlargedImageFragment2(it)
             )
         })
 

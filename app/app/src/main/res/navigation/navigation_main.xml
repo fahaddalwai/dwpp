@@ -21,7 +21,7 @@
             app:destination="@id/enlargedImageFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right"
-            app:popUpTo="@id/discoverFragment" /> />
+            app:popUpTo="@id/discoverFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"

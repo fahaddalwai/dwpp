@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/editProfileFragment"
+        android:id="@+id/dropdown_menu_navigation"
         android:title="Edit Profile" />
     <item
         android:id="@+id/logout"

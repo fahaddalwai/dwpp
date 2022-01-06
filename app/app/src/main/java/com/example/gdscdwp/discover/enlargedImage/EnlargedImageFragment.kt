@@ -30,8 +30,9 @@ class EnlargedImageFragment : Fragment() {
 
 
         val viewModelFactory = EnlargedImageViewModelFactory(args.catUrl, application)
-        binding.viewModel = ViewModelProvider(
+        val viewModel = ViewModelProvider(
             this, viewModelFactory).get(EnlargedImageViewModel::class.java)
+        binding.viewModel = viewModel
 
 
 

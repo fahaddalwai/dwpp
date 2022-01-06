@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dropdown_menu_navigation"
+    app:startDestination="@id/editProfileFragment2">
+
+    <fragment
+        android:id="@+id/editProfileFragment2"
+        android:name="com.example.gdscdwp.editprofile.EditProfileFragment"
+        android:label="EditProfileFragment" />
+</navigation>
