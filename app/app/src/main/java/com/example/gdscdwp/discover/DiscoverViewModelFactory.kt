@@ -4,11 +4,11 @@ import androidx.lifecycle.AbstractSavedStateViewModelFactory
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
-import com.example.gdscdwp.data.Repository
+import com.example.gdscdwp.data.CatRepository
 
 class DiscoverViewModelFactory(
     owner: SavedStateRegistryOwner,
-    private val repository: Repository
+    private val repository: CatRepository
 ) : AbstractSavedStateViewModelFactory(owner, null) {
 
     override fun <T : ViewModel?> create(

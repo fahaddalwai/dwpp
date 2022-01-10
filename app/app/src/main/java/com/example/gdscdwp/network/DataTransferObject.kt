@@ -1,6 +1,6 @@
 package com.example.gdscdwp.network
 
-import androidx.lifecycle.Transformations.map
+
 import com.example.gdscdwp.database.DatabaseCatImage
 import com.example.gdscdwp.domain.CatImage
 import com.squareup.moshi.JsonClass

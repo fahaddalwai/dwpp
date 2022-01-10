@@ -32,7 +32,7 @@ interface CatApiService {
     ): List<NetworkResponse>
 }
 
-object ResponseApi {
+object CatResponseApi {
     val retrofitService: CatApiService by lazy {
         retrofit.create(CatApiService::class.java)
     }

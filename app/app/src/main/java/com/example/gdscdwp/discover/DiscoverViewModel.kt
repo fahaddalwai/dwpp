@@ -5,14 +5,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.example.gdscdwp.data.Repository
+import com.example.gdscdwp.data.CatRepository
 import com.example.gdscdwp.domain.CatImage
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 
 class DiscoverViewModel(
-    private val repository: Repository,
+    private val repository: CatRepository,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 

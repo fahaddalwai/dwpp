@@ -18,8 +18,8 @@ import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gdscdwp.R
-import com.example.gdscdwp.network.ResponseApi
-import com.example.gdscdwp.data.Repository
+
+import com.example.gdscdwp.data.CatRepository
 import com.example.gdscdwp.database.CatDatabase.Companion.getInstance
 import com.example.gdscdwp.databinding.FragmentDiscoverBinding
 import kotlinx.coroutines.flow.*
@@ -27,6 +27,7 @@ import kotlinx.coroutines.launch
 import android.widget.AdapterView
 
 import androidx.navigation.fragment.findNavController
+import com.example.gdscdwp.network.CatResponseApi
 
 
 class DiscoverFragment : Fragment() {
@@ -43,8 +44,8 @@ class DiscoverFragment : Fragment() {
 
 
         val viewModelFactory = DiscoverViewModelFactory(
-            this, Repository(
-                ResponseApi.retrofitService,
+            this, CatRepository(
+                CatResponseApi.retrofitService,
                 getInstance(requireContext())
             )
         )

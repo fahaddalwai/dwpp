@@ -8,8 +8,8 @@ import com.example.gdscdwp.database.CatDatabase
 import com.example.gdscdwp.domain.CatImage
 import kotlinx.coroutines.flow.Flow
 
-class Repository(private val service: CatApiService,
-                 private val database: CatDatabase
+class CatRepository(private val service: CatApiService,
+                    private val database: CatDatabase
 ) {
 
     fun getSearchResultStream(query: String): Flow<PagingData<CatImage>> {

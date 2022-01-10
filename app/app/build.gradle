@@ -67,12 +67,15 @@ dependencies {
         // Excludes the support library because it's already included by Glide.
         transitive = false
     }
-
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.7.2'
+    implementation("androidx.datastore:datastore:1.0.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
     //navigation
     def nav_version = "2.4.0-alpha01"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //for retrofit conversion
     implementation("androidx.fragment:fragment-ktx:1.4.0")
 }

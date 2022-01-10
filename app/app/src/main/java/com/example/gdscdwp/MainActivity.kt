@@ -38,7 +38,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.twentyFourSeven.android.apb.commons.setupWithNavController
+
 import kotlinx.android.synthetic.main.activity_main.*
 
 
