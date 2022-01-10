@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.preference.Preference
 import androidx.datastore.core.DataStore
 import com.example.gdscdwp.R
-import com.example.gdscdwp.userPreferences.UserPreference
 
 import java.util.prefs.Preferences
 

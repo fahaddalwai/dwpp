@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main"
-    app:startDestination="@id/profile_navigation">
+    app:startDestination="@id/recommendation_navigation">
     <include app:graph="@navigation/discover_navigation" />
     <include app:graph="@navigation/profile_navigation" />
     <include app:graph="@navigation/recommendation_navigation" />

@@ -20,38 +20,19 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/dark_pink"
             android:text="Log In"
+            android:onClick="@{() -> viewModel.setEventLoginTrue()}"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/backgroundImageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.55" />
-
-        <Button
-            android:id="@+id/gsoButtonLogin"
-            android:layout_width="190sp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:drawableRight="@drawable/icons8_google"
-
-
-            android:text="Log in with"
-            android:textColor="@color/dark_pink"
-
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/backgroundImageView"
-            app:layout_constraintEnd_toEndOf="@+id/loginButtonLogin"
-            app:layout_constraintStart_toStartOf="@+id/loginButtonLogin"
-            app:layout_constraintTop_toBottomOf="@+id/loginButtonLogin"
-            app:layout_constraintVertical_bias="0.100000024"
-            app:strokeColor="@color/dark_pink"
-            app:strokeWidth="1sp" />
+            app:layout_constraintVertical_bias="0.65" />
 
         <ImageView
             android:id="@+id/backgroundImageView"
             android:layout_width="0dp"
-            android:layout_height="160sp"
+            android:layout_height="180sp"
             android:scaleType="fitXY"
             android:src="@drawable/bottom_rectangle"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -66,6 +47,7 @@
             android:layout_marginBottom="48dp"
             android:background="@color/pink"
             android:ems="10"
+            android:text="@={viewModel.email}"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:padding="10sp"
@@ -80,6 +62,7 @@
             android:layout_marginBottom="28dp"
             android:background="@color/pink"
             android:ems="10"
+            android:text="@={viewModel.password}"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:padding="10sp"
@@ -121,7 +104,7 @@
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-            app:layout_constraintVertical_bias="0.40" />
+            app:layout_constraintVertical_bias="0.5" />
 
         <TextView
             android:id="@+id/weeklyTextView"
@@ -139,7 +122,7 @@
         <ImageView
             android:id="@+id/weeklyPetsImageView"
             android:layout_width="0dp"
-            android:layout_height="140sp"
+            android:layout_height="160sp"
             android:layout_marginBottom="12dp"
             android:src="@drawable/quote"
             app:layout_constraintBottom_toBottomOf="parent"
