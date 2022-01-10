@@ -22,7 +22,7 @@ import com.example.gdscdwp.databinding.FragmentLoginBinding
 import com.example.gdscdwp.databinding.FragmentSignupBinding
 import com.example.gdscdwp.network.AuthApi
 import com.example.gdscdwp.network.CatResponseApi
-import com.example.gdscdwp.userPreferences.UserPreference
+
 
 
 class SignupFragment : Fragment() {
@@ -59,6 +59,13 @@ class SignupFragment : Fragment() {
             if (it) {
                 goBack()
                 viewModel.setEventGoBackToFalse()
+            }
+        })
+
+        viewModel.eventSignin.observe(viewLifecycleOwner, {
+            if(it){
+                viewModel.eventSignInUser()
+                viewModel.setEventSigninToFalse()
             }
         })
 

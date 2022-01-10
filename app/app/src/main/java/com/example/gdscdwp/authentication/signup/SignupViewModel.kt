@@ -1,6 +1,5 @@
 package com.example.gdscdwp.authentication.signup
 
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,9 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.gdscdwp.authentication.isValidEmail
 import com.example.gdscdwp.data.AuthRepository
-import com.example.gdscdwp.network.UserInfo
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.first
+import com.example.gdscdwp.network.request.UserSignupInfo
 import kotlinx.coroutines.launch
 
 class SignupViewModel(private val repository: AuthRepository): ViewModel() {
@@ -23,17 +20,13 @@ class SignupViewModel(private val repository: AuthRepository): ViewModel() {
     val eventMainActivity: LiveData<Boolean>
         get() = _eventMainActivity
 
-
-
     private val _eventSignin = MutableLiveData<Boolean>()
     val eventSignin: LiveData<Boolean>
         get() = _eventSignin
 
     val username = MutableLiveData<String>()
 
-
     val email = MutableLiveData<String>()
-
 
     val password = MutableLiveData<String>()
 
@@ -56,11 +49,14 @@ class SignupViewModel(private val repository: AuthRepository): ViewModel() {
     }
 
     fun setEventSigninToTrue(){
+        _eventSignin.value=true
+    }
 
-        viewModelScope.launch{
+
+    fun eventSignInUser(){
+        viewModelScope.launch {
             signIn()
         }
-        setEventSigninToFalse()
     }
 
     fun setEventSigninToFalse(){
@@ -74,7 +70,7 @@ class SignupViewModel(private val repository: AuthRepository): ViewModel() {
 
     suspend fun signIn(){
         if(validateFields()){
-            val currentUser=UserInfo(username.value.toString().trim(),
+            val currentUser= UserSignupInfo(username.value.toString().trim(),
                     email.value.toString().trim(),
                     password.value.toString().trim())
             Log.i("the current user details",currentUser.toString())
