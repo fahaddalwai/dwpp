@@ -43,6 +43,12 @@ class AuthRepository (private val service: AuthApiService,private val context: C
             uiMode
         }
 
+    suspend fun clearDataStore(){
+        context.dataStore.edit {
+            it.clear()
+        }
+    }
+
     suspend fun getCurrentUser(): UserX {
         Log.i("datastore value",getFromDataStore.first())
         return service.getUserById(getFromDataStore.first())
