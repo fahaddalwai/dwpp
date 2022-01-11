@@ -31,6 +31,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -60,27 +61,35 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
 
-        bottomNavigation = binding.bottomNavigationView
-
-        toolbar=binding.toolbar
 
         navHostFragment =  supportFragmentManager.findFragmentById(R.id.myNavHostFragment) as NavHostFragment
         navController = navHostFragment.navController
 
+        bottomNavigation = binding.bottomNavigationView
         bottomNavigationView.setupWithNavController(navController)
+
+
+        toolbar=binding.toolbar
+
+
+
+
+
+
+
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.profileFragment2,R.id.recommendationsFragment2,R.id.discoverFragment))
         setSupportActionBar(toolbar)
 
 
-
-        //NavigationUI.setupActionBarWithNavController(this,navController)
-
+        toolbar.setupWithNavController(navController,appBarConfiguration)
 
 
 
 
 
-        val drawable = ContextCompat.getDrawable(applicationContext, R.drawable.fire_icon)
-        binding.toolbar.overflowIcon = drawable
+//
+//        val drawable = ContextCompat.getDrawable(applicationContext, R.drawable.fire_icon)
+//        binding.toolbar.overflowIcon = drawable
 
 
 
