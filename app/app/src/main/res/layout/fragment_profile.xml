@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+    <variable
+        name="viewModel"
+        type="com.example.gdscdwp.profile.ProfileViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,28 +19,29 @@
             android:id="@+id/profileImageView"
             android:layout_width="96dp"
             android:layout_height="96dp"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/placeholder_cat"
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/LastNameTextView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_marginTop="32dp"
             android:background="@color/white"
-            android:hint="@string/last_name"
-
+            android:ems="12"
+            android:text="@{viewModel.userName}"
+            android:hint="@string/name"
             android:minHeight="48dp"
             android:padding="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/fullNameTextView"
-            app:layout_constraintStart_toStartOf="@+id/profileImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profileImageView" />
 
         <TextView
@@ -48,52 +51,21 @@
             android:layout_marginTop="32dp"
             android:background="@color/white"
             android:hint="@string/email"
-
+            android:text="@{viewModel.email}"
             android:minHeight="48dp"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="@+id/LastNameTextView"
             app:layout_constraintStart_toStartOf="@+id/LastNameTextView"
             app:layout_constraintTop_toBottomOf="@+id/LastNameTextView" />
 
-        <TextView
-            android:id="@+id/PhonenumberTextView"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="32dp"
-            android:background="@color/white"
-            android:hint="@string/phone_number"
-
-            android:minHeight="48dp"
-            android:padding="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/emailEditText"
-            app:layout_constraintStart_toStartOf="@+id/emailEditText"
-            app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
-
-        <TextView
-            android:id="@+id/fullNameTextView"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="32dp"
-            android:background="@color/white"
-            android:hint="@string/first_name"
-
-            android:minHeight="48dp"
-            android:padding="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/profileImageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/profileImageView"
-            app:layout_constraintTop_toTopOf="@+id/profileImageView" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="389dp"
             android:layout_height="262dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="3dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/PhonenumberTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

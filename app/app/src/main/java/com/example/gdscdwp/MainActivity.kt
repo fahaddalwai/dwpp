@@ -11,22 +11,18 @@ import com.example.gdscdwp.R
 import com.example.gdscdwp.databinding.ActivityMainBinding
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
-import android.view.Gravity
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import com.bumptech.glide.Glide
 import android.graphics.drawable.Drawable
 import android.os.Build
-import android.view.View
+import android.view.*
 import androidx.navigation.Navigation.findNavController
 
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.internal.ContextUtils.getActivity
 import de.hdodenhof.circleimageview.CircleImageView
-import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -36,11 +32,13 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.example.gdscdwp.data.AuthRepository
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.flow.first
 
 
 class MainActivity : AppCompatActivity() {
@@ -90,10 +88,11 @@ class MainActivity : AppCompatActivity() {
 //
 //        val drawable = ContextCompat.getDrawable(applicationContext, R.drawable.fire_icon)
 //        binding.toolbar.overflowIcon = drawable
+    }
 
 
 
-        }
+
 
 
 //    override fun onSupportNavigateUp(): Boolean {
@@ -102,3 +101,4 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+

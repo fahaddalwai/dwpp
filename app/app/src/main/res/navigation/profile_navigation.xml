@@ -7,4 +7,8 @@
         android:id="@+id/profileFragment2"
         android:name="com.example.gdscdwp.profile.ProfileFragment"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment3"
+        android:name="com.example.gdscdwp.editprofile.EditProfileFragment"
+        android:label="EditProfileFragment" />
 </navigation>

@@ -9,6 +9,7 @@ import com.example.gdscdwp.authentication.isValidEmail
 import com.example.gdscdwp.data.AuthRepository
 import com.example.gdscdwp.network.request.UserLoginInfo
 import com.example.gdscdwp.network.request.UserSignupInfo
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class LoginViewModel(private val repository: AuthRepository): ViewModel() {

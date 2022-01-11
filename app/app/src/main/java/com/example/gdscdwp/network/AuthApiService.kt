@@ -1,6 +1,7 @@
 package com.example.gdscdwp.network
 
 import com.example.gdscdwp.network.dto.User
+import com.example.gdscdwp.network.dto.UserX
 import com.example.gdscdwp.network.request.UserLoginInfo
 import com.example.gdscdwp.network.request.UserSignupInfo
 import okhttp3.OkHttpClient
@@ -41,6 +42,10 @@ interface AuthApiService {
         @Body param: UserLoginInfo
     ): User
 
+    @GET("users/{userId}")
+    suspend fun getUserById(
+        @Path("userId") id: String
+    ): UserX
 
 
 }
