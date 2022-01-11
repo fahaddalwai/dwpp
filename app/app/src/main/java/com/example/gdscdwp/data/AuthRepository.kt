@@ -36,6 +36,7 @@ class AuthRepository (private val service: AuthApiService,private val context: C
 
 
 
+
     val getFromDataStore: Flow<String> = context.dataStore.data
         .map { userDetail ->
             val uiMode = userDetail[USER_ID] ?:"empty"
