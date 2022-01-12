@@ -5,6 +5,7 @@ import com.example.gdscdwp.network.dto.UserX
 import com.example.gdscdwp.network.request.UserLoginInfo
 import com.example.gdscdwp.network.request.UserSignupInfo
 import okhttp3.OkHttpClient
+import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -44,6 +45,12 @@ interface AuthApiService {
 
     @GET("users/{userId}")
     suspend fun getUserById(
+        @Path("userId") id: String
+    ): UserX
+
+
+    @DELETE("/users/{userId}")
+    suspend fun deleteUserById(
         @Path("userId") id: String
     ): UserX
 

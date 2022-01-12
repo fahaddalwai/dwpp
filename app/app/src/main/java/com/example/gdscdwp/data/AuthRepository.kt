@@ -54,6 +54,10 @@ class AuthRepository (private val service: AuthApiService,private val context: C
         return service.getUserById(getFromDataStore.first())
     }
 
+    suspend fun deleteUserById():UserX{
+        return service.deleteUserById(getFromDataStore.first())
+    }
+
     companion object{
         val USER_ID = stringPreferencesKey("USER_ID")
 

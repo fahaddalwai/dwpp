@@ -1,5 +1,6 @@
 package com.example.gdscdwp.authentication.authActivity
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,8 +29,11 @@ class WelcomeViewModel(private val repository: AuthRepository) : ViewModel() {
 
     init{
         //TODO if logged out the make sure to remove value from datastore
+
+
         setEventSkipAuthFalse()
         viewModelScope.launch{
+            Log.i("repostiry",repository.getFromDataStore.first())
             val id=repository.getFromDataStore.first()
             if(id=="empty"){
                 setEventSkipAuthFalse()
